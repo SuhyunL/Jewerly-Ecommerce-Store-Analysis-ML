@@ -1,6 +1,8 @@
 # **E-Commerce Purchase Records from Jewelry Store**
 https://www.kaggle.com/mkechinov/ecommerce-purchase-history-from-jewelry-store
 
+# Analysis / ML Report in Korean 🇰🇷 
+### https://github.com/SuhyunL/Jewerly-Ecommerce-Store-Analysis-ML/blob/main/%5BPDF%2C%20KOR%5DJewelry%20Project_ppt.pdf
 
 # **Introduction**
 
