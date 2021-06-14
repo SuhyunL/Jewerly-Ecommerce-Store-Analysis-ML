@@ -18,7 +18,7 @@ E-commerce market is one of the fastest growing industry. This data contains dat
   > But recently, after the Covid-19, the virus impacted the sales more than the month If there are higher cases, sales gets lower immediately. When there are lower cases, sales increase. Higher cases made people to stay inside, which reduced the spendings for apparels to go outside.
   - Sales by time
   > Turned out that 10AM-1PM is the golden hour for daily sales
-- Sales by day
+  - Sales by day
   > Sales peaked on Thursday. Sales decreased during the weekend, when people go outside and oine sales hit the apex.
 
 #### 2. Sales by Frequency of Repurchase
