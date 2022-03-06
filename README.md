@@ -39,7 +39,6 @@ E-commerce market is one of the fastest growing industry. This data contains dat
 ![image](https://user-images.githubusercontent.com/75061420/126740142-85b404cc-f023-4798-b613-93d6fc79fb9a.png)
 
 The repurchase rate is 17%, which is comparatively very high. There is a high frequency until the second repurchase, but the frequency decreases significantly from the number of repurchases. Meanwhile, the most repurchases are 231.
-The repurchase rate is 17%, which is comparatively very high. There is a high frequency until the second repurchase, but the frequency decreases significantly from the number of repurchases. Meanwhile, the most repurchases are 231.
 
 **Are there any brands that are particularly repurchased?**
 ![image](https://user-images.githubusercontent.com/75061420/126740325-18b2617b-b131-4af9-bf6f-af241944c6d4.png)
@@ -82,4 +81,35 @@ There were trend followers, also. There were about 10,000 people, which is nearl
 ![image](https://user-images.githubusercontent.com/75061420/126742356-525cd77f-bc61-4743-bf30-1cb914f62ec0.png)
 According to the trend leaders' recent purchases, Gold ring with a diamond seems like a trend.
 
+# **Machine Learning Model**
+## **🔹 Insights**
+### 1. Sales Analysis
+Covid directly impacted on Sales. Meanwhile, out repurchase rate is 17%, which is very high compared to other jewerly shops.
+### 2. Brand Analysis
+Brand #1 seems like having the biggest potential.
+Brand #1 is showing a rapid growth, fiercely chasing it's competitor brand #0, and finally turned the table.
+### 3. Trend Analysis
+Trend and Trend leader existed. Most of trends were drawing PLC line and there were some trend leaders who have shown 70% accuracy. According to the trend leaders' recent purchases, Gold ring with a diamond seems like a trend.
 
+## **🔹 Modeling**
+To increase sales, we need to highlight our strength- high repurchase rate. The core of high repurchase rate is reasonable price and good products. The price turned out to be seasonable, but the problem was in the products. There are too many products that are purchased only once (low sales). The trend exists, but the trendy products are hardly noticeable as there are too much products that are behind the trend, interferes the exposure.
+
+Therefore, we need a machile learning model which can predict future sales and leave sellable products so we can improve product pools, which will eventually raise repurchase rate.
+
+### Model 1. Binary Classification Model
+- Predicts whether a product will be sold next quarter or not.
+- Feature selection: Didn't selected the feature- used whole feature but noised each of it so the model choose actual impact features by itself.
+- Model: XGB Boost (showed best performance in multiple experiments/ n_estimators = 400, scale_pos_weight = ratio, max_depth = 9, subsample = 0.9)
+- Performance: Detected 80% of non-sold item & 93% of sold items.
+
+### Model 2. Rigression Model
+- Predicts how much it would be sold next quarter.
+- Feature selection: Used most of the features and left it to the model itself, but deleted 'quantity-per quarter' feature as it can cause data leakage.
+- Model: LGBMRegressor(num_boost_round = 1000, learning_rate = 0.1, num_iterations = 90, max_depth = 8, metric = 'l1', max_bin = 446, min_data = 42)
+- Performance: R2 0.82/ MAE 983/ MSE 3187948/ RMSE 1785
+
+
+# **Expected Effect**
+- Improve overall product composition and save cost by leaving products worth selling.
+- Able to put more focus on potential items by predicting next quarter sales by products.
+- Eventually enhance repurchase rate and overcome stagnant sales.
